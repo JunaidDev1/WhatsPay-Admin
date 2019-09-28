@@ -1,0 +1,29 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop:true }"></ngx-loading>
+<app-header></app-header>
+
+<div class="mainContent">
+
+    <div class="row" *ngIf="user">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="profileContainer px-3 py-2 bg-white">
+                <label class="btn btn-link mt-2 w-100 pointer">
+                    <img [src]="user.profileUrl || '/assets/imgs/user.png'">
+                    <input type="file" (change)="onChangeFile($event)">
+                </label>
+                <label class="w-100">First Name:</label>
+                <input [(ngModel)]="user.firstName" type="text" placeholder="John" class="form-control mb-2">
+                <label class="w-100">Last Name:</label>
+                <input [(ngModel)]="user.lastName" type="text" placeholder="Doe" class="form-control mb-2">
+                <label class="w-100">Email Address:</label>
+                <input [(ngModel)]="user.contactEmail" type="text" disabled placeholder="admin@whatspay.com"
+                    class="form-control mb-2">
+                <label class="w-100">Phone Number:</label>
+                <input [(ngModel)]="user.phone" type="text" placeholder="+1 843 000 0000" class="form-control mb-2">
+                <button (click)="updateProfile()" class="btn btn-success w-100 my-2">Update Profile</button>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>

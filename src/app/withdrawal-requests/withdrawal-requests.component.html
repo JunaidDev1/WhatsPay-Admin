@@ -1,0 +1,126 @@
+<app-header></app-header>
+
+<div class="mainContent">
+
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item mt-2"><a href="#">WhatsPay</a></li>
+        <li class="breadcrumb-item mt-2"><a href="#">Home</a></li>
+        <li class="breadcrumb-item mt-2 active">Withdrawal Requests:</li>
+        <input [(ngModel)]="query" style="width: 300px; margin-left: auto" type="text" placeholder="Search here..."
+            class="form-control">
+    </ul>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Pending</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu1">Completed</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content pt-4">
+        <div class="tab-pane container active" id="home">
+            <table class="table table-bordered table-sm bg-white">
+                <thead>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Date</th>
+                    <th>requested Amount</th>
+                    <th class="text-center">Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Sam Doe</td>
+                        <td>20/09/2019</td>
+                        <td>$320</td>
+                        <td class="text-center">
+                            <button data-target="#bankDetails" data-toggle="modal" class="btn btn-sm btn-primary">Bank
+                                Details</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John Doe</td>
+                        <td>20/09/2019</td>
+                        <td>$320</td>
+                        <td class="text-center">
+                            <button data-target="#bankDetails" data-toggle="modal" class="btn btn-sm btn-primary">Bank
+                                Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane container fade" id="menu1">
+            <table class="table table-bordered table-sm bg-white">
+                <thead>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Date</th>
+                    <th>requested Amount</th>
+                    <th class="text-center">Action</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Sam Doe</td>
+                        <td>20/09/2019</td>
+                        <td>$320</td>
+                        <td class="text-center">
+                            <button data-target="#bankDetails" data-toggle="modal" class="btn btn-sm btn-primary">Bank
+                                Details</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John Doe</td>
+                        <td>20/09/2019</td>
+                        <td>$320</td>
+                        <td class="text-center">
+                            <button data-target="#bankDetails" data-toggle="modal" class="btn btn-sm btn-primary">Bank
+                                Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="modal" id="bankDetails">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Bank Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <label class="w-100">Accountholder Name:</label>
+                <label class="form-control mb-1">John Doe</label>
+                <label class="w-100">Bank Name:</label>
+                <label class="form-control">XYZ</label>
+                <label class="w-100">IBAN Number:</label>
+                <label class="form-control">XYZ</label>
+                <label class="w-100">Requested Amount:</label>
+                <label class="form-control">$320</label>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</div>

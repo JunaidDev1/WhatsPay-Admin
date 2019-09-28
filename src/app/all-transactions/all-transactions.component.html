@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="mainContent">
+
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item mt-2"><a href="#">WhatsPay</a></li>
+        <li class="breadcrumb-item mt-2"><a href="#">Home</a></li>
+        <li class="breadcrumb-item mt-2 active">Whatspay Transactions:</li>
+        <input [(ngModel)]="query" style="width: 300px; margin-left: auto" type="text" placeholder="Search here..."
+            class="form-control">
+    </ul>
+
+    <table class="table table-bordered table-sm bg-white">
+        <thead>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Sender/Receiver</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Sam Doe</td>
+                <td>20/09/2019</td>
+                <td>Amount Transferred</td>
+                <td>$320</td>
+                <td>Marrie Doe</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John Doe</td>
+                <td>20/09/2019</td>
+                <td>Amount Received</td>
+                <td>$320</td>
+                <td>Danny Doe</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

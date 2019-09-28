@@ -1,0 +1,41 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop:true }"></ngx-loading>
+<app-header></app-header>
+
+<div class="mainContent">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item mt-2"><a href="#">WhatsPay</a></li>
+        <li class="breadcrumb-item mt-2"><a href="#">Home</a></li>
+        <li class="breadcrumb-item mt-2 active">{{usersCount}} Users</li>
+        <input [(ngModel)]="query" style="width: 300px; margin-left: auto" type="text" placeholder="Search here..."
+            class="form-control">
+    </ul>
+
+    <table class="table table-sm table-hover table-bordered bg-white">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of allUsers | userFilter: query; index as i">
+                <td>{{i+1}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.contactEmail}}</td>
+                <td>{{user.phone}}</td>
+                <td class="text-center">
+                    <button routerLink="/user-detail/{{user.uid}}" class="btn btn-sm btn-primary mr-1">Detail</button>
+                    <button (click)="updateStatus(user, 'blocked')" *ngIf="user.status=='unblocked'|| !user.status"
+                        class="btn btn-sm btn-danger mr-1">Block</button>
+                    <button (click)="updateStatus(user, 'unblocked')" *ngIf="user.status=='blocked'"
+                        class="btn btn-sm btn-success">Unblock</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

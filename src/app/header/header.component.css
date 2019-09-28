@@ -1,0 +1,78 @@
+.navbar {
+  padding: 0px 20px;
+}
+
+.navbar-nav img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.navbar .appLogo {
+  width: 70px;
+  height: 70px;
+  padding: 5px;
+  object-fit: contain;
+}
+
+.navbar .nav-item .nav-link {
+  color: #292929;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.navbar .nav-item:hover .nav-link {
+  color: #000000;
+}
+
+.navbar .nav-item {
+  padding: 0px 15px 5px;
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+}
+
+.activeLink a {
+  color: #00a251 !important;
+  font-weight: bold !important;
+}
+
+/* PROFILE DROPDOWN MENU STYLING */
+
+.dropdown-menu {
+  background-color: #4e5660;
+  color: #ffffff;
+  border-radius: 30px;
+  padding-bottom: 0px;
+  width: 200px;
+  left: -30px;
+}
+
+.dropdown-menu button {
+  border-radius: 0px 0px 30px 30px;
+}
+
+.dropdown-menu img {
+  margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 0px !important;
+}
+
+.dropdown-menu .dropdown-item {
+  background-color: #292929;
+  padding: 8px 10px;
+  border-top: 1px solid #ffffff;
+}
+
+.dropdown-menu .dropdown-item i {
+  float: right !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: transparent !important;
+}

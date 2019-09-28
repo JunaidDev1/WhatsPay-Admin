@@ -1,0 +1,55 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop:true }"></ngx-loading>
+<app-header></app-header>
+
+<div class="mainContent">
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Update Password</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu1">Update Privacy Policy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">Update Terms of Service</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu3">Update About Us</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content mt-3">
+        <div class="tab-pane container active" id="home">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label class="w-100">Current Password:</label>
+                    <input [(ngModel)]="currentPassword" type="password" class="form-control mb-2"
+                        placeholder="Current Password">
+                    <label class="w-100">New Password:</label>
+                    <input [(ngModel)]="newPassword" type="password" class="form-control mb-2"
+                        placeholder="New Password">
+                    <label class="w-100">Confirm Password:</label>
+                    <input [(ngModel)]="cNewPassword" type="password" class="form-control mb-2"
+                        placeholder="Confirm Password">
+                    <button (click)="updatePassword()" class="btn btn-success w-100 mt-2">Update Password</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+
+        <!-- PRIVACY POLICY SECTION -->
+
+        <div class="tab-pane container fade" id="menu1">
+            
+        </div>
+
+
+
+        <div class="tab-pane container fade" id="menu2">
+            
+        </div>
+    </div>
+
+</div>

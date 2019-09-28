@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md ixed-top bg-white fixed-top shadow">
+  <!-- Brand -->
+  <a class="navbar-brand dark p-0" routerLink="/home">
+    <img src="/assets/imgs/appLogo.jpg" class="appLogo">
+  </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li [routerLinkActive]="['activeLink']" routerLink="/home" class="nav-item pointer">
+        <a class="nav-link">Home</a>
+      </li>
+      <li [routerLinkActive]="['activeLink']" routerLink="/all-transactions" class="nav-item pointer">
+        <a class="nav-link">All Transactions</a>
+      </li>
+      <li [routerLinkActive]="['activeLink']" routerLink="/withdrawal-requests" class="nav-item pointer">
+        <a class="nav-link">Withdrawal Requests</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle pointer" id="navbardrop" data-toggle="dropdown">
+          {{adminName}} <img [src]="profileUrl || '/assets/imgs/user.png'">
+        </a>
+        <div class="dropdown-menu">
+          <div class="text-center pointer" routerLink="/profile">
+            <img [src]="profileUrl || '/assets/imgs/user.png'">
+            <h5>{{adminName}}</h5>
+          </div>
+          <a routerLink="/profile" class="dropdown-item white">Edit profile <i class="fas fa-edit"></i></a>
+          <a routerLink="/settings" class="dropdown-item white">Settings <i class="fas fa-cog"></i></a>
+          <button (click)="logout()" class="btn bg-primary white w-100">Log out</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,47 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px', fullScreenBackdrop:true }"></ngx-loading>
+<div class="container">
+  <div class="topSection text-center">
+    <h5 class="text-white">WhatsPay Admin</h5>
+    <h1 class="text-white">Welcome Back!</h1>
+  </div>
+  <div class="row contentSection">
+    <div class="col-md-4"></div>
+
+    <div class="col-md-4 loginForm">
+      <div [formGroup]="onLoginForm">
+        <div class="text-center appLogo mb-4">
+          <img src="/assets/imgs/appLogo.jpg">
+        </div>
+        <p class="text-center font-weight-bold">Login to your account!</p>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+          <input formControlName="email" [(ngModel)]="email" type="email" class="form-control" placeholder="Email">
+        </div>
+        <p class="errorMsg" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+          Email is required</p>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fas fa-lock"></i>
+            </span>
+          </div>
+          <input formControlName="password" [(ngModel)]="password" type="password" class="form-control"
+            placeholder="Password">
+        </div>
+        <p class="errorMsg"
+          *ngIf="onLoginForm.get('password').touched && onLoginForm.get('password').hasError('required')">Password is
+          required</p>
+
+        <button (click)="userLogin()" [disabled]="!onLoginForm.valid" class="btn bg-primary w-100 mb-2">Login</button>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+
+  </div>
+</div>
