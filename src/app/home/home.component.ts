@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CollectionDataService } from '../collection-data.service';
 import * as firebase from 'firebase';
 
 @Component({
@@ -14,12 +15,18 @@ export class HomeComponent implements OnInit {
   public allUsers: Array<any> = [];
 
   constructor(
-    public router: Router
+    public router: Router,
+    public service: CollectionDataService
   ) {
   }
 
   ngOnInit() {
-    this.getAllUsers();
+    if (this.service.allUsers.length == 0) {
+      this.getAllUsers();
+    }
+    else {
+      this.allUsers = this.service.allUsers;
+    }
   }
 
 
@@ -34,6 +41,7 @@ export class HomeComponent implements OnInit {
           user.key = key;
           self.allUsers.push(user);
         }
+        self.service.allUsers = self.allUsers;
         self.loading = false;
         self.usersCount = self.allUsers.length;
       });

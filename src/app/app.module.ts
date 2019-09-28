@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -63,6 +64,7 @@ firebase.initializeApp(firebaseConfig);
     NgxLoadingModule.forRoot({}),
     FormsModule,
     ReactiveFormsModule,
+    CKEditorModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

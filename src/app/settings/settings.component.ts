@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import * as firebase from 'firebase';
 
 
@@ -16,13 +17,30 @@ export class SettingsComponent implements OnInit {
   public email: any;
   public loading = false;
 
+  public appData: any;
+  public Editor = ClassicEditor;
+
   constructor(
     public router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
+    this.getSettings();
     this.email = localStorage.getItem('email');
   }
+
+
+  getSettings() {
+    var self = this;
+    self.loading = true;
+    firebase.database().ref().child('settings' + '/' + 'data')
+      .once('value', (snapshot) => {
+        self.appData = snapshot.val();
+        self.loading = false;
+      });
+  }
+
 
   updatePassword() {
     var self = this;
@@ -62,6 +80,17 @@ export class SettingsComponent implements OnInit {
         self.loading = false;
         alert(errorMessage);
       });
+  }
+
+
+  saveData(node, data) {
+    var updates = {};
+    var self = this;
+    self.loading = true;
+    updates['/settings' + '/' + 'data' + '/' + node] = data;
+    firebase.database().ref().update(updates).then(() => {
+      self.loading = false;
+    });
   }
 
 }

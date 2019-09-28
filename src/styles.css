@@ -81,3 +81,7 @@ select:focus {
   font-size: 14px;
   margin: -10px 0px 10px !important;
 }
+
+.tab-content .tab-pane {
+  max-width: 100% !important;
+}

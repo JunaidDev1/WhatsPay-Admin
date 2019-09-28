@@ -3,8 +3,8 @@
 <div class="mainContent">
 
     <ul class="breadcrumb">
-        <li class="breadcrumb-item mt-2"><a href="#">WhatsPay</a></li>
-        <li class="breadcrumb-item mt-2"><a href="#">Home</a></li>
+        <li class="breadcrumb-item mt-2"><a class="pointer" routerLink="/home">WhatsPay</a></li>
+        <li class="breadcrumb-item mt-2"><a class="pointer" routerLink="/home">Home</a></li>
         <li class="breadcrumb-item mt-2 active">Whatspay Transactions:</li>
         <input [(ngModel)]="query" style="width: 300px; margin-left: auto" type="text" placeholder="Search here..."
             class="form-control">
@@ -14,6 +14,8 @@
         <thead>
             <th>#</th>
             <th>User Name</th>
+            <th>Email</th>
+            <th>Contact</th>
             <th>Date</th>
             <th>Status</th>
             <th>Amount</th>
@@ -23,6 +25,8 @@
             <tr>
                 <td>1</td>
                 <td>Sam Doe</td>
+                <td>sam@gmail.com</td>
+                <td>+1234567890</td>
                 <td>20/09/2019</td>
                 <td>Amount Transferred</td>
                 <td>$320</td>
@@ -31,6 +35,8 @@
             <tr>
                 <td>2</td>
                 <td>John Doe</td>
+                <td>john@gmail.com</td>
+                <td>+1234567890</td>
                 <td>20/09/2019</td>
                 <td>Amount Received</td>
                 <td>$320</td>

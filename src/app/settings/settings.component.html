@@ -19,7 +19,7 @@
     </ul>
 
     <!-- Tab panes -->
-    <div class="tab-content mt-3">
+    <div *ngIf="appData" class="tab-content mt-3">
         <div class="tab-pane container active" id="home">
             <div class="row">
                 <div class="col-md-4"></div>
@@ -42,13 +42,21 @@
         <!-- PRIVACY POLICY SECTION -->
 
         <div class="tab-pane container fade" id="menu1">
-            
+            <ckeditor [editor]="Editor" [(ngModel)]="appData.privacyPolicy"></ckeditor>
+            <button (click)="saveData('privacyPolicy' ,appData.privacyPolicy)" class="btn btn-success mt-2 mb-5">Save
+                privacy Policy</button>
         </div>
 
-
-
         <div class="tab-pane container fade" id="menu2">
-            
+            <ckeditor [editor]="Editor" [(ngModel)]="appData.termsService"></ckeditor>
+            <button (click)="saveData('termsService',appData.termsService)" class="btn btn-success mt-2 mb-5">Save terms
+                of service</button>
+        </div>
+
+        <div class="tab-pane container fade" id="menu3">
+            <ckeditor [editor]="Editor" [(ngModel)]="appData.aboutUs"></ckeditor>
+            <button (click)="saveData('aboutUs',appData.aboutUs)" class="btn btn-success mt-2 mb-5">Save
+                Data</button>
         </div>
     </div>
 

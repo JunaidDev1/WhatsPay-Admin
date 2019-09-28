@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CollectionDataService {
 
-  public user: any = {};
+  public allUsers: any = [];
 
   constructor() { }
 }
